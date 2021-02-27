@@ -3,11 +3,12 @@
 ### The database engine used for this project is SQLite
 ### It is not necessary to create the database as the API automatically creates the database when it is first started. The database is created in the same directory as the project, it is empty since it is created from 0. It is necessary to add products to be able to work with them, let's see how it is done :
 ### **Requierements**
-* pipenv : `pip install pipenv`
-* Python 3 : `https://www.python.org/`
+* `pip install pipenv`
+* [Python](https://www.python.org/)
+* [SQLite](https://www.sqlite.org/index.html)
 ### **Setting up the environment**
 #### This project uses `pipenv`, which allows you to automatically create and manage a virtual environment for different projects, as well as add / remove packages from your Pipfile as you install / uninstall packages.
-1. To make the requests it is necessary to use an API client such as Insomnia, here is the link to download it: `https://insomnia.rest/`
+1. To make the requests it is necessary to use an API client such as Insomnia, here is the link to download it: [Insomnia](https://insomnia.rest/)
 2. To run the virtual environment of the project, go to your directory and run this command in a terminal: `pipenv shell`
 3. Now you need to install some packages to be able to work with the api without problems, to do this, execute this command in the terminal: `pipenv install -r requirements.txt`. If you want to see the packages you just installed, visit the `Pipfile` file
 4. We are almost there! Just start the server and the magic begins! To start the server, go to the project directory, open the terminal and run this command: `python app.py`
