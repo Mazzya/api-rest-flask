@@ -14,7 +14,7 @@
 4. We are almost there! Just start the server and the magic begins! To start the server, go to the project directory, open the terminal and run this command: `python app.py`
 5. To verify that the server is working without any problem, access from your browser or from the API client to this address: `http://127.0.0.1:5000/`
 ### **Make requests**
-#### **Add product `http://127.0.0.1:5000/products` with POST method**
+#### Add product `http://127.0.0.1:5000/products` with POST method
 ```
 {
     "name": "example",
@@ -23,7 +23,7 @@
     "quantity": 100
 }
 ```
-#### **Get all products `http://127.0.0.1:5000/products` with GET method**
+#### Get all products `http://127.0.0.1:5000/products` with GET method
 ```
 [
   {
@@ -42,7 +42,7 @@
   }
 ]
 ```
-#### **Get product by its ID `http://127.0.0.1:5000/products/id` with GET method**
+#### Get product by its ID `http://127.0.0.1:5000/products/id` with GET method
 ```
 {
     "description": "Sturdy pencils",
@@ -52,7 +52,7 @@
     "quantity": 252
   }
 ```
-#### **Update product `http://127.0.0.1:5000/products/id` with PUT method**
+#### Update product `http://127.0.0.1:5000/products/id` with PUT method
 ```
 {
     "name": "Pen",
@@ -61,7 +61,7 @@
     "quantity": 350
   }
 ```
-#### **Delete product `http://127.0.0.1:5000/products/id` with DELETE method**
+#### Delete product `http://127.0.0.1:5000/products/id` with DELETE method
 
 ```
 {
