@@ -1,7 +1,7 @@
 # Endpoints
 from flask import request, render_template, redirect, url_for, jsonify
 from app import app, db
-from schemas.products import Product, TaskSchema, task_schema, tasks_schema
+from schemas.products import Product, ProductSchema, product_schema, products_schema
 
 productNotFoundMessage = "Product not found"
 
@@ -30,14 +30,14 @@ def addProduct():
     new_product = Product(name, description, price, quantity)
     db.session.add(new_product)
     db.session.commit()
-    return task_schema.jsonify(new_product)
+    return product_schema.jsonify(new_product)
 
 # Get all products
 @app.route("/products")
 def getProducts():
     products = Product.query.filter_by().all()
     if products is not None:
-        return tasks_schema.jsonify(products)
+        return products_schema.jsonify(products)
     return jsonify({"message": "products not found"})
 
 # Get product by id
@@ -45,7 +45,7 @@ def getProducts():
 def getProduct(id):
     product = Product.query.get(id)
     if product is not None:
-        return task_schema.jsonify(product)
+        return product_schema.jsonify(product)
     return jsonify({"message": productNotFoundMessage})
 
 # Update product
@@ -62,7 +62,7 @@ def editProduct(id):
         product.price = price
         product.quantity = quantity
         db.session.commit()
-        return task_schema(product)
+        return product_schema(product)
     return jsonify({"message": productNotFoundMessage})
 
 # Delete product

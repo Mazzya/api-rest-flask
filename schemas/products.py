@@ -13,9 +13,9 @@ class Product(db.Model):
         self.price = price
         self.quantity = quantity
 
-class TaskSchema(ma.Schema):
+class ProductSchema(ma.Schema):
     class Meta:
         fields = ('id', 'name', 'description', 'price', 'quantity')
 
-task_schema = TaskSchema()
-tasks_schema = TaskSchema(many=True)
+product_schema = ProductSchema()
+products_schema = ProductSchema(many=True)
