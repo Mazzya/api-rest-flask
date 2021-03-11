@@ -1,3 +1,4 @@
+# This file contains the different states of the api
 class Config(object):
     DEBUG  = False
     SQLALCHEMY_DATABASE_URI = 'sqlite:///database.db'

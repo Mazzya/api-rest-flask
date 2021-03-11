@@ -1,14 +1,16 @@
+# Endpoints
 from flask import request, render_template, redirect, url_for, jsonify
 from app import app, db
 from schemas.products import Product, TaskSchema, task_schema, tasks_schema
 
 productNotFoundMessage = "Product not found"
 
-
+# This function handles 404 error
 @app.errorhandler(404)
 def pageNotFound(error):
     return jsonify({"message": "page not found 😅"}), 404
 
+# Home page
 @app.route("/")
 def home():
     return jsonify({
@@ -18,6 +20,7 @@ def home():
         "Github Project": ""
     })
 
+# Add new product
 @app.route("/products", methods = ['POST'])
 def addProduct():
     name = request.json['name']
@@ -29,6 +32,7 @@ def addProduct():
     db.session.commit()
     return task_schema.jsonify(new_product)
 
+# Get all products
 @app.route("/products")
 def getProducts():
     products = Product.query.filter_by().all()
@@ -36,14 +40,15 @@ def getProducts():
         return tasks_schema.jsonify(products)
     return jsonify({"message": "products not found"})
 
+# Get product by id
 @app.route("/products/<int:id>")
 def getProduct(id):
     product = Product.query.get(id)
     if product is not None:
         return task_schema.jsonify(product)
-    #return jsonify({"message": "product not found"})
     return jsonify({"message": productNotFoundMessage})
 
+# Update product
 @app.route("/products/<int:id>", methods=['PUT'])
 def editProduct(id):
     name = request.json['name']
@@ -60,6 +65,7 @@ def editProduct(id):
         return task_schema(product)
     return jsonify({"message": productNotFoundMessage})
 
+# Delete product
 @app.route("/products/<int:id>", methods = ['DELETE'])
 def deleteProduct(id):
     product = Product.query.get(id)
