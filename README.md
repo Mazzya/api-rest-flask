@@ -1,7 +1,7 @@
 # A REST API of products with Flask
-### This api has been developed with the aim of showing how Flask works and how a simple api works. This api consists of managing products, you can create, read, update and delete a product, that's right, a CRUD!
-### The database engine used for this project is SQLite
-### It is not necessary to create the database as the API automatically creates the database when it is first started. The database is created in the same directory as the project, it is empty since it is created from 0. It is necessary to add products to be able to work with them, let's see how it is done :
+#### This api has been developed with the aim of showing how Flask works and how a simple api works. This api consists of managing products, you can create, read, update and delete a product, that's right, a CRUD!
+#### The database engine used for this project is [SQLite](https://github.com/sqlite/sqlite)
+#### It is not necessary to create the database as the API automatically creates the database when it is first started. The database is created in the same directory as the project, it is empty since it is created from 0. It is necessary to add products to be able to work with them, let's see how it is done :
 ### **Requierements**
 * `pip install pipenv`
 * [Python](https://www.python.org/)
